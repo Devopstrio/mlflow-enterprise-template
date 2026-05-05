@@ -4,17 +4,16 @@
 
 <h1>MLflow Enterprise Template</h1>
 
-<p><strong>The Institutional-Grade Platform for MLOps Lifecycle, Model Governance, and Multi-Cloud Intelligence Orchestration</strong></p>
+<p><strong>The Institutional-Grade Platform for MLOps Lifecycle, Model Governance, and Multi-Cloud Intelligence Orchestration.</strong></p>
 
-[![Standard: ML--Lifecycle](https://img.shields.io/badge/Standard-ML--Lifecycle-purple.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-purple.svg?style=for-the-badge&labelColor=000000)]()
-[![Registry: Enterprise--MLflow](https://img.shields.io/badge/Registry-Enterprise--MLflow-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Ops: Automated--MLOps](https://img.shields.io/badge/Ops-Automated--MLOps-gold.svg?style=for-the-badge&labelColor=000000)]()
+[![Standard: MLOps-Excellence](https://img.shields.io/badge/Standard-MLOps--Excellence-purple.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: AI--Governance](https://img.shields.io/badge/Focus-AI--Governance-indigo.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Machine learning is easy; MLOps is hard."** 
-> MLflow Enterprise Template is a flagship solution for ML Engineers, Data Scientists, and MLOps Platform leaders. By orchestrating MLflow Tracking, Enterprise Model Registry, and automated inference pipelines, it enables organizations to manage the full ML lifecycle with institutional-scale rigor and reproducibility.
+> **MLflow Enterprise Template** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global AI/ML operations. It orchestrates the complex lifecycle of machine learning—from experimental tracking and model registration to automated deployment and unified MLOps governance.
 
 </div>
 
@@ -22,625 +21,261 @@
 
 ## 🏛️ Executive Summary
 
-The **MLflow Enterprise Template** is a specialized flagship solution designed for AI Business Units, Data Engineering teams, and Platform Organizations. As ML moves from experimentation to production, organizations face the massive challenge of reproducibility, model governance, and drift management in distributed environments. This platform addresses these complexities using a cloud-native, "lifecycle-first" framework.
+Fragmented experiment data and manual model deployments are strategic operational liabilities; lack of centralized MLOps orchestration is a primary barrier to organizational AI scaling. Organizations fail to achieve rapid AI impact not because of a lack of models, but because of fragmented data standards, lack of automated validation, and an inability to orchestrate model lifecycles with operational precision.
 
-This platform provides a **Unified ML Intelligence Plane**. It demonstrates how to orchestrate institutional MLOps—using **FastAPI**, **React 18**, **MLflow**, and **Terraform**—to create a "Model-First" engineering culture. By providing **Experiment Tracking**, **Model Versioning**, **Automated Validation**, and **Drift Monitoring**, it enables organizations to move from "Notebook-based ML" to "Industrial MLOps Capabilities."
-
----
-
-## 📉 The "MLOps Bottleneck" Problem
-
-Enterprises scaling AI initiatives face existential challenges:
-- **Reproducibility Crisis**: Difficulty replicating models across environments due to untracked hyperparameters, datasets, and environmental dependencies.
-- **Model Governance Gaps**: Lack of standardized workflows for model review, staging, and production approval, leading to "Shadow AI" deployments.
-- **Deployment Fragility**: High-risk, manual model deployments that lack automated validation (smoke tests) or rollback capabilities.
-- **Observability Void**: Inability to detect model performance degradation (drift) in real-time, leading to inaccurate predictions in production.
+This platform provides the **ML Intelligence Plane**. It implements a complete **Enterprise MLOps-as-Code Framework**, enabling Data Science and ML Engineering teams to manage model lifecycles as first-class citizens. By automating the registration of high-performance models and orchestrating real-time drift monitoring, we ensure that every organizational insight—from customer churn predictions to fraud detection algorithms—is reproducible by default, audited for history, and strictly aligned with institutional AI governance frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Standardized ML Lifecycle**: Establishing a repeatable pipeline for Experimentation, Training, Registry, and Deployment.
-- **Enterprise Model Registry**: Using MLflow to manage model versioning, lifecycle stages (Staging/Production), and lineage.
-- **Automated Model Validation**: Enforcing rigorous performance and quality checks before any model reaches production.
+### 1. Principal Architecture: Global ML Lifecycle & MLOps Intelligence Plane
+This diagram illustrates the end-to-end flow from experimental tracking and hyperparameter optimization to model registration, deployment, and institutional MLOps auditing.
 
-### 💰 Business Outcomes
-- **4x Increase in Model Deployment Velocity**: Through automated CI/CD for ML pipelines and standardized serving patterns.
-- **100% Traceability & Compliance**: By maintaining an immutable record of every experiment, metric, and artifact in the MLflow backend.
-- **Reduced Model Risk**: By implementing automated drift detection and canary-based deployment strategies for inference services.
+```mermaid
+graph LR
+    %% Subgraph Definitions
+    subgraph DataExperimentation["ML Data & Experimentation"]
+        direction TB
+        Notebooks["Jupyter / IDE Workspaces"]
+        HyperOpt["Hyperparameter Optimization"]
+        Features["Feature Store Access"]
+    end
+
+    subgraph IntelligenceEngine["MLOps Intelligence Hub"]
+        direction TB
+        API["FastAPI MLOps Gateway"]
+        Tracker["MLflow Tracking Engine"]
+        Registry["Model Registry (Lifecycle)"]
+        Validator["Performance & Bias Verifier"]
+    end
+
+    subgraph ExecutionPlane["Distributed Training & Serving"]
+        direction TB
+        TrainingFleet["Distributed Training Clusters"]
+        InferenceSvc["Real-Time Inference Service"]
+        BatchJobs["Batch Prediction Workers"]
+    end
+
+    subgraph OperationsHub["Institutional MLOps Hub"]
+        direction TB
+        Scorecard["ML Maturity Score"]
+        Analytics["Drift & Performance Stats"]
+        Audit["Forensic ML Metadata Lake"]
+    end
+
+    subgraph DevOps["MLOps-as-Code Orchestration"]
+        direction TB
+        TF["Terraform MLflow Modules"]
+        CI["Model CI/CD Pipeline"]
+        ChatOps["Deployment Approval Hub"]
+    end
+
+    %% Flow Arrows
+    DataExperimentation -->|1. Track Run| API
+    API -->|2. Persist Metrics| Tracker
+    Tracker -->|3. Validate Model| Validator
+    Validator -->|4. Register Version| Registry
+    
+    Registry -->|5. Deploy Model| ExecutionPlane
+    ExecutionPlane -->|6. Monitor Drift| OperationsHub
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track Success| Analytics
+    Scorecard -->|9. Record Event| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    CI -->|11. Trigger Retrain| DataExperimentation
+    Audit -->|12. Improve Models| Registry
+
+    %% Styling
+    classDef data fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
+    classDef execution fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class DataExperimentation data;
+    class IntelligenceEngine intel;
+    class ExecutionPlane execution;
+    class OperationsHub ops;
+    class DevOps devops;
+```
+
+### 2. The ML Model Lifecycle Flow
+The continuous path of a machine learning model from initial experimentation and training to active registration, deployment, and institutional forensic auditing.
+
+```mermaid
+graph LR
+    Experiment["Experiment Run"] --> Train["Train Model"]
+    Train --> Register["Register Model"]
+    Register --> Deploy["Deploy Inference"]
+    Deploy --> Audit["Forensic Audit"]
+```
+
+### 3. MLflow Tracking & Metadata Topology
+Strategically centralizing disparate experiment parameters, metrics, and artifacts across distributed data science teams into a unified institutional metadata hub.
+
+```mermaid
+graph LR
+    Hub["Unified MLflow Hub"] -->|Track| TeamA["Team A: Fraud Detection"]
+    Hub -->|Track| TeamB["Team B: Recommendation"]
+    Hub -->|Track| TeamC["Team C: Forecasting"]
+    Hub --- Storage["Central Artifact Store (S3)"]
+```
+
+### 4. Model Registry & Versioning Flow
+Managing the controlled transition of models through institutional lifecycle stages—from "Staging" and "Production" to "Archived"—ensuring only validated models reach live users.
+
+```mermaid
+graph TD
+    Staging["Staging (Candidate)"] -->|Test Pass| Production["Production (Active)"]
+    Production -->|Drift Detected| Retrain["Retrain Trigger"]
+    Production -->|Obsolete| Archive["Archived"]
+```
+
+### 5. Artifact Storage & Geo-Replication Flow
+Managing high-volume model binary files and serialized artifacts across geographic boundaries, providing low-latency access for distributed inference clusters.
+
+```mermaid
+graph LR
+    Artifact["Model Artifact"] -->|Upload| S3_Primary["S3: US-East-1"]
+    S3_Primary -->|Cross-Region| S3_Secondary["S3: EU-West-1"]
+    S3_Secondary --- Inference["Local Inference Cluster"]
+```
+
+### 6. CI/CD for Machine Learning (MLOps) Flow
+Integrating model training and deployment into a unified CI/CD pipeline, ensuring that every code change triggers a reproducible training run and validation cycle.
+
+```mermaid
+graph LR
+    Code["Code Change"] --> CI["Training Pipeline"]
+    CI -->|Metric Pass| Registry["Register Model"]
+    Registry -->|Approval| CD["Deploy to K8s"]
+    CD --- Live["Live Inference"]
+```
+
+### 7. Institutional ML Maturity Scorecard
+Grading organizational performance based on key indicators: Reproducibility Rate, Model Drift Response Time, and Governance Coverage.
+
+```mermaid
+graph TD
+    Post["ML Maturity: 92%"] --> Risk["Shadow AI: 8%"]
+    Post --- C1["Reproducibility (99%)"]
+    Post --- C2["Drift Response (Hours)"]
+```
+
+### 8. Identity & RBAC for MLOps Governance
+Managing fine-grained access to experiment runs, model versions, and artifact storage between Data Scientists, ML Engineers, and Model Compliance Officers.
+
+```mermaid
+graph TD
+    Scientist["Data Scientist"] --> Hub["Manage Experiments"]
+    Engineer["ML Engineer"] --> Registry["Manage Deployments"]
+    Compliance["Compliance Officer"] --> Audit["Verify Lineage"]
+```
+
+### 9. IaC Deployment: MLOps-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the MLflow tracking hubs, model registries, and forensic metadata lakes.
+
+```mermaid
+graph LR
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["MLOps Control Plane"]
+    Engine --> Clusters["HA MLflow Fleet"]
+```
+
+### 10. AIOps Model Drift & Performance Validation Flow
+Using advanced analytics to identify decay in model accuracy or shifts in input data distributions, triggering automated alerts and retraining workflows.
+
+```mermaid
+graph LR
+    Live["Inference Inputs"] --> Model["Baseline Distribution"]
+    Live --> Detect["Drift Engine"]
+    Detect -->|Alert| Retrain["RETRAIN TRIGGER"]
+```
+
+### 11. Metadata Lake for Forensic ML Audit
+Storing long-term records of every experiment run, parameter set, and deployment decision for institutional record-keeping, compliance auditing, and post-incident forensics.
+
+```mermaid
+graph LR
+    Run["Experiment Run"] --> Stream["Forensic Stream"]
+    Stream --> Lake["ML Metadata Lake"]
+    Lake --> Trends["Model Performance Trends"]
+```
 
 ---
 
-## 📐 Architecture Storytelling: 80+ Advanced Diagrams
-
-### 1. Executive ML Lifecycle Orchestration
-*The industrial flow from data ingestion to production monitoring.*
-```mermaid
-graph TD
-    subgraph "Experimentation"
-        Note[Notebook / IDE]
-        Track[MLflow Tracking]
-        Run[Experiment Run]
-    end
-
-    subgraph "Model Management"
-        Val[Validation Engine]
-        Reg[MLflow Registry]
-        Gov[Governance Approval]
-    end
-
-    subgraph "Deployment & Serving"
-        CI[CI/CD Pipeline]
-        Inf[Inference Service]
-        Monitor[Drift Monitoring]
-    end
-
-    subgraph "Persistence"
-        Artifact[Object Storage]
-        DB[Metadata DB]
-    end
-
-    Note --> Track
-    Track --> Run
-    Run --> Val
-    Val --> Reg
-    Reg --> Gov
-    Gov --> CI
-    CI --> Inf
-    Inf --> Monitor
-    Monitor --> Track
-    Run --> Artifact
-    Track --> DB
-```
-
-### 2. MLflow Tracking & Artifact Flow
-*How metadata and models are persisted during training.*
-```mermaid
-sequenceDiagram
-    participant SDK as MLflow SDK
-    participant API as MLflow Server
-    participant DB as Backend Store (Postgres)
-    participant S3 as Artifact Store (S3)
-
-    SDK->>API: POST /runs/create
-    API->>DB: Persist Run Metadata
-    SDK->>API: log_params / log_metrics
-    API->>DB: Update Metrics/Params
-    SDK->>S3: Upload Model Artifact (.pkl/.onnx)
-    SDK->>API: log_artifact (URI)
-    API->>DB: Persist Artifact Pointer
-```
-
-### 3. Model Registry Lifecycle (Governance)
-```mermaid
-stateDiagram-v2
-    [*] --> None: Registered
-    None --> Staging: Approval Requested
-    Staging --> Production: Quality Gate Pass
-    Production --> Archived: Deprecated
-    Staging --> Archived: Failed Validation
-```
-
-### 4. Automated Model Validation Pipeline
-```mermaid
-graph LR
-    Model[New Model Run] --> Perf[Accuracy/Precision Check]
-    Perf --> Bias[Bias/Fairness Check]
-    Bias --> Stress[Inference Latency Stress]
-    Stress --> Result{PASS?}
-    Result -->|Yes| Register[Register in MLflow]
-    Result -->|No| Notify[Alert Data Scientist]
-```
-
-### 5. Model Deployment Strategy (Canary)
-```mermaid
-graph TD
-    Ingress[Traffic Ingress] --> Proxy[Load Balancer]
-    Proxy -->|95%| V1[Stable: Fraud-V3]
-    Proxy -->|5%| V2[Canary: Fraud-V4]
-    V2 --> Monitor[Drift/Success Monitor]
-    Monitor -->|Healthy| Rollout[Full Rollout]
-```
-
-### 6. Model Drift Detection Pipeline
-```mermaid
-graph LR
-    Prod[Prod Predictions] --> Store[Prediction Log]
-    Store --> Compare[Drift Analyzer]
-    Compare -->|Data Drift Detected| Retrain[Trigger Retraining]
-    Compare -->|Model Decay| Alert[Operational Alert]
-```
-
-### 7. Feature Store Integration Pattern
-```mermaid
-graph LR
-    Store[Feature Store] --> Training[Offline Features]
-    Store --> Serving[Online Features]
-    Note right of Store: Consistent Feature Logic
-```
-
-### 8. CI/CD: Model Build Pipeline
-```mermaid
-graph LR
-    Git[Git Commit] --> Build[Dockerize Serving]
-    Build --> Scan[Vulnerability Scan]
-    Scan --> Push[Registry Push]
-```
-
-### 9. Infrastructure: MLflow on K8s
-```mermaid
-graph TD
-    Ingress[Ingress Nginx] --> Svc[MLflow Service]
-    Svc --> Pod1[Replica A]
-    Svc --> Pod2[Replica B]
-```
-
-### 10. Multi-Tenant Workspace Isolation
-```mermaid
-graph LR
-    UserA[Team A] --> TrackA[Namespace A]
-    UserB[Team B] --> TrackB[Namespace B]
-    Note right of TrackB: RBAC Policy Enforcement
-```
-
-### 11. ML lifecycle flow
-```mermaid
-graph LR
-    M[ML] --> L[Life]
-```
-
-### 12. Experiment tracking flow
-```mermaid
-graph LR
-    E[Expe] --> T[Trac]
-```
-
-### 13. Model registry lifecycle
-```mermaid
-graph LR
-    M[Mode] --> R[Regi]
-```
-
-### 14. Deployment pipeline flow
-```mermaid
-graph LR
-    D[Depl] --> P[Pipe]
-```
-
-### 15. Monitoring pipeline flow
-```mermaid
-graph LR
-    M[Moni] --> P[Pipe]
-```
-
-### 16. Training pipeline flow
-```mermaid
-graph LR
-    T[Trai] --> P[Pipe]
-```
-
-### 17. Validation pipeline flow
-```mermaid
-graph LR
-    V[Vali] --> P[Pipe]
-```
-
-### 18. Feature store logic
-```mermaid
-graph LR
-    F[Feat] --> S[Stor]
-```
-
-### 19. Real-time inference service
-```mermaid
-graph LR
-    R[Real] --> I[Infe]
-```
-
-### 20. Batch inference pipeline
-```mermaid
-graph LR
-    B[Batc] --> I[Infe]
-```
-
-### 21. Drift detection flow
-```mermaid
-graph LR
-    D[Drif] --> D[Dete]
-```
-
-### 22. Model explainability hooks
-```mermaid
-graph LR
-    M[Mode] --> E[Expl]
-```
-
-### 23. Governance approval flow
-```mermaid
-graph LR
-    G[Govn] --> A[Appr]
-```
-
-### 24. Multi-tenant isolation
-```mermaid
-graph LR
-    M[Mult] --> T[Tena]
-```
-
-### 25. Cost tracking for ML
-```mermaid
-graph LR
-    C[Cost] --> T[Trac]
-```
-
-### 26. Artifact storage flow
-```mermaid
-graph LR
-    A[Arti] --> S[Stor]
-```
-
-### 27. Canary deployment flow
-```mermaid
-graph LR
-    C[Cana] --> D[Depl]
-```
-
-### 28. A/B testing flow
-```mermaid
-graph LR
-    A[AB] --> T[Test]
-```
-
-### 29. Infrastructure: K8s
-```mermaid
-graph LR
-    I[Infr] --> K[Kube]
-```
-
-### 30. Infrastructure: MLflow
-```mermaid
-graph LR
-    I[Infr] --> M[MLFl]
-```
-
-### 31. Infrastructure: DB
-```mermaid
-graph LR
-    I[Infr] --> D[Data]
-```
-
-### 32. Monitoring: Prometheus
-```mermaid
-graph LR
-    M[Moni] --> P[Prom]
-```
-
-### 33. Monitoring: Grafana
-```mermaid
-graph LR
-    M[Moni] --> G[Graf]
-```
-
-### 34. Monitoring: Alerts
-```mermaid
-graph LR
-    M[Moni] --> A[Aler]
-```
-
-### 35. CI/CD: Build pipeline
-```mermaid
-graph LR
-    C[CICD] --> B[Buil]
-```
-
-### 36. CI/CD: Test pipeline
-```mermaid
-graph LR
-    C[CICD] --> T[Test]
-```
-
-### 37. CI/CD: Deploy pipeline
-```mermaid
-graph LR
-    C[CICD] --> D[Depl]
-```
-
-### 38. Frontend: Dashboard
-```mermaid
-graph LR
-    F[Fron] --> D[Dash]
-```
-
-### 39. Frontend: Registry
-```mermaid
-graph LR
-    F[Fron] --> R[Regi]
-```
-
-### 40. Frontend: Monitoring
-```mermaid
-graph LR
-    F[Fron] --> M[Moni]
-```
-
-### 41. API: Auth flow
-```mermaid
-graph LR
-    A[API] --> A[Auth]
-```
-
-### 42. API: Experiment run
-```mermaid
-graph LR
-    A[API] --> E[Expe]
-```
-
-### 43. API: Model register
-```mermaid
-graph LR
-    A[API] --> M[Mode]
-```
-
-### 44. API: Model deploy
-```mermaid
-graph LR
-    A[API] --> M[Mode]
-```
-
-### 45. Worker: Training
-```mermaid
-graph LR
-    W[Work] --> T[Trai]
-```
-
-### 46. Worker: Deployment
-```mermaid
-graph LR
-    W[Work] --> D[Depl]
-```
-
-### 47. Worker: Monitoring
-```mermaid
-graph LR
-    W[Work] --> M[Moni]
-```
-
-### 48. Worker: Validation
-```mermaid
-graph LR
-    W[Work] --> V[Vali]
-```
-
-### 49. Worker: Notification
-```mermaid
-graph LR
-    W[Work] --> N[Noti]
-```
-
-### 50. Model rollback flow
-```mermaid
-graph LR
-    M[Mode] --> R[Roll]
-```
-
-### 51. Metadata storage flow
-```mermaid
-graph LR
-    M[Meta] --> S[Stor]
-```
-
-### 52. Dataset versioning flow
-```mermaid
-graph LR
-    D[Data] --> V[Vers]
-```
-
-### 53. Serving clusters map
-```mermaid
-graph LR
-    S[Serv] --> C[Clus]
-```
-
-### 54. Training engine flow
-```mermaid
-graph LR
-    T[Trai] --> E[Engi]
-```
-
-### 55. Deployment engine flow
-```mermaid
-graph LR
-    D[Depl] --> E[Engi]
-```
-
-### 56. Monitoring engine flow
-```mermaid
-graph LR
-    M[Moni] --> E[Engi]
-```
-
-### 57. Airflow integration
-```mermaid
-graph LR
-    A[Airf] --> I[Inte]
-```
-
-### 58. Notebook integration
-```mermaid
-graph LR
-    N[Note] --> I[Inte]
-```
-
-### 59. Storage abstraction
-```mermaid
-graph LR
-    S[Stor] --> A[Abst]
-```
-
-### 60. Security: OIDC flow
-```mermaid
-graph LR
-    S[Secu] --> O[OIDC]
-```
-
-### 61. Security: RBAC flow
-```mermaid
-graph LR
-    S[Secu] --> R[RBAC]
-```
-
-### 62. Security: Secrets
-```mermaid
-graph LR
-    S[Secu] --> S[Secr]
-```
-
-### 63. Metrics: Latency
-```mermaid
-graph LR
-    M[Metr] --> L[Late]
-```
-
-### 64. Metrics: Accuracy
-```mermaid
-graph LR
-    M[Metr] --> A[Accu]
-```
-
-### 65. Metrics: Drift
-```mermaid
-graph LR
-    M[Metr] --> D[Drif]
-```
-
-### 66. Transformation roadmap
-```mermaid
-graph LR
-    T[Tran] --> R[Road]
-```
-
-### 67. Value realization model
-```mermaid
-graph LR
-    V[Valu] --> R[Real]
-```
-
-### 68. Institutional maturity
-```mermaid
-graph LR
-    I[Inst] --> M[Matu]
-```
-
-### 69. Strategy execution loop
-```mermaid
-graph LR
-    S[Stra] --> E[Exec]
-```
-
-### 70. MLOps ecosystem map
-```mermaid
-graph LR
-    M[MLOp] --> E[Ecos]
-```
-
-### 71. Supply chain of intelligence
-```mermaid
-graph LR
-    S[Supp] --> I[Inte]
-```
-
-### 72. MLOps blueprint map
-```mermaid
-graph LR
-    M[MLOp] --> B[Blue]
-```
-
-### 73. Model lineage flow
-```mermaid
-graph LR
-    M[Mode] --> L[Line]
-```
-
-### 74. Artifact versioning logic
-```mermaid
-graph LR
-    A[Arti] --> V[Vers]
-```
-
-### 75. Retraining trigger logic
-```mermaid
-graph LR
-    R[Retr] --> T[Trig]
-```
-
-### 76. Hyperparameter optimization
-```mermaid
-graph LR
-    H[Hype] --> O[Opti]
-```
-
-### 77. Distributed training flow
-```mermaid
-graph LR
-    D[Dist] --> T[Trai]
-```
-
-### 78. Edge inference flow
-```mermaid
-graph LR
-    E[Edge] --> I[Infe]
-```
-
-### 79. Compliance audit trail
-```mermaid
-graph LR
-    C[Comp] --> A[Audi]
-```
-
-### 80. AI/ML strategy blueprint
-```mermaid
-graph LR
-    A[AIML] --> B[Blue]
-```
+## 🏛️ Core MLOps Pillars
+
+1.  **Unified Experiment Tracking**: Maximizing reproducibility by capturing all parameters, metrics, and code versions.
+2.  **Controlled Model Governance**: Enforcing institutional workflows for model promotion and production approval.
+3.  **Automated Validation Pipelines**: Guaranteeing model quality and safety before inference deployment.
+4.  **Real-Time Drift Intelligence**: Identifying and responding to model decay through continuous monitoring.
+5.  **Multi-Cloud Artifact Scalability**: Managing global distribution of large model assets with low-latency access.
+6.  **Full ML Auditability**: Immutable recording of every experiment run and deployment decision for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### MLOps Platform & Core
-- **Framework**: MLflow (Tracking, Registry, Projects).
-- **Backend**: FastAPI for platform control plane and model serving.
-- **Processing**: Python 3.11+ / Pandas / Scikit-learn / PyTorch.
+### MLOps Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **Tracking Hub**: MLflow Tracking Server with PostgreSQL backend.
+*   **Registry Hub**: MLflow Model Registry for versioned lifecycle management.
+*   **Persistence**: PostgreSQL (Metadata Lake) and Redis (Live Cache).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege ML asset access.
 
-### Frontend (ML Intelligence Hub)
-- **Framework**: React 18 / Vite
-- **Visuals**: Recharts (Training Velocity, Accuracy Curves, Drift Trends).
-- **Theme**: Dark, Purple, and Indigo (Institutional AI Aesthetics).
+### ML Intelligence Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Purple, Slate (Modern high-fidelity AI/ML aesthetic).
+*   **Visualization**: Recharts for training curves, drift trends, and model performance heatmaps.
 
-### Infrastructure
-- **Cloud**: AWS EKS (Inference), RDS (MLflow Backend), S3 (Artifact Store).
-- **IaC**: Terraform (VPC, K8s, RDS, S3, IAM).
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS).
+*   **Artifact Plane**: Scalable object storage (S3/GCS) with global replication capabilities.
+*   **IaC**: Modular Terraform for deploying the MLOps hub and registry distributions.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/mlops_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/registry`** | Model versioning engine | MLflow Server, S3 |
+| **`infrastructure/inference`** | Real-time serving fleet | K8s Service, Horizontal Autoscaler |
+| **`infrastructure/auditing`** | Forensic ML sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the MLOps platform
 git clone https://github.com/devopstrio/mlflow-enterprise-template.git
 cd mlflow-enterprise-template
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch the MLOps mesh
-make up
+# Launch the MLOps stack
+make init
+
+# Trigger a mock experiment run and model registration simulation
+make simulate-mlflow
 ```
+
 Access the ML Intelligence Hub at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
